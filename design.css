@@ -90,35 +90,55 @@ nav ul li a:hover {
     max-width: 100%;
 }
 
-.section {
+.portfolio {
+    padding: 120px 8%;
+    background: #111;
+    text-align: center;
+}
+
+.portfolio-header h2 {
+    font-size: 36px;
+    color: #ff2e63;
+}
+
+.portfolio-header p {
+    margin: 15px 0 50px;
+    color: #ccc;
+}
+
+.portfolio-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    width: 300px;
+    transition: 0.4s;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.portfolio-item h3 {
+    margin-top: 15px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+.kontakt {
     padding: 120px 8%;
     text-align: center;
 }
 
-.section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
+.kontakt h2 {
     color: #ff2e63;
-}
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: #1a1a1a;
-    padding: 40px;
-    border-radius: 10px;
-    width: 250px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    background: #222;
+    margin-bottom: 20px;
 }
 
 @media(max-width: 900px) {
