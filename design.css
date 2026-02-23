@@ -87,7 +87,9 @@ nav ul li a:hover {
 
 .hero-image img {
     width: 400px;
-    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .portfolio {
@@ -99,10 +101,11 @@ nav ul li a:hover {
 .portfolio-header h2 {
     font-size: 36px;
     color: #ff2e63;
+    margin-bottom: 15px;
 }
 
 .portfolio-header p {
-    margin: 15px 0 50px;
+    margin-bottom: 50px;
     color: #ccc;
 }
 
@@ -115,16 +118,16 @@ nav ul li a:hover {
 
 .portfolio-item {
     width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
     transition: 0.4s;
 }
 
 .portfolio-item img {
     width: 100%;
-    border-radius: 10px;
-}
-
-.portfolio-item h3 {
-    margin-top: 15px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .portfolio-item:hover {
@@ -150,5 +153,15 @@ nav ul li a:hover {
 
     .hero-image {
         margin-top: 40px;
+    }
+
+    .hero-image img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .portfolio-item {
+        width: 250px;
+        height: 250px;
     }
 }
