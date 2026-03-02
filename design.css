@@ -19,7 +19,7 @@ nav {
     align-items: center;
     position: fixed;
     top: 0;
-    background: rgba(14, 14, 14, 0.95);
+    background: #0e0e0e;
     z-index: 1000;
 }
 
@@ -134,7 +134,7 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .portfolio-item:hover {
@@ -142,7 +142,7 @@ nav ul li a:hover {
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 .kontakt {
@@ -155,27 +155,27 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* LIGHTBOX STYLY */
+/* LIGHTBOX - FULLSCREEN STYLE */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 9999;
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: #000; /* Úplně černá pro maximální efekt */
     justify-content: center;
     align-items: center;
-    cursor: zoom-out;
+    cursor: pointer;
 }
 
 .lightbox img {
-    max-width: 85%;
-    max-height: 85%;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    cursor: default;
+    /* Tyto parametry zajistí, že se obrázek roztáhne přes celou plochu */
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain; /* Změň na 'cover', pokud chceš obrázek bez černých pruhů (ale může se oříznout) */
+    border-radius: 0;
 }
 
 .close {
@@ -185,7 +185,8 @@ nav ul li a:hover {
     font-size: 50px;
     color: white;
     cursor: pointer;
-    font-weight: bold;
+    z-index: 10001;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
 /* RESPONSIVITA */
@@ -195,18 +196,8 @@ nav ul li a:hover {
         text-align: center;
         padding-top: 120px;
     }
-
-    .hero-image {
-        margin-top: 40px;
-    }
-
     .hero-image img.borec-image {
         width: 300px;
         height: 300px;
-    }
-
-    .portfolio-item {
-        width: 280px;
-        height: 280px;
     }
 }
