@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procházka.sro</title>
-
+    <title>Procházka.sro | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="design.css">
 </head>
@@ -35,7 +34,7 @@
 
     <div class="portfolio-header">
         <h2>Design</h2>
-        <p>Ukázky mých projektů v oblasti designu</p>
+        <p>Ukázky mých projektů (kliknutím zvětšíš)</p>
     </div>
 
     <div class="portfolio-grid">
@@ -52,7 +51,7 @@
 
     <div class="portfolio-header web-header">
         <h2>Web</h2>
-        <p>Ukázky mých projektů v oblasti webů</p>
+        <p>Odkazy na mé funkční weby</p>
     </div>
 
     <div class="portfolio-grid">
@@ -83,27 +82,29 @@
     <p>Telefon: +420 123 456 789</p>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="">
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Zvětšený náhled">
 </div>
 
 <script>
-function openLightbox(src) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-}
-
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
-
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        closeLightbox();
+    function openLightbox(src) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        lightbox.style.display = "flex";
+        lightboxImg.src = src;
     }
-});
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    // Zavření pomocí klávesy Esc
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    });
 </script>
 
 </body>
