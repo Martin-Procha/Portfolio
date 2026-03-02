@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procházka.sro | Portfolio</title>
+    <title>Procházka.sro</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="design.css">
 </head>
@@ -34,7 +34,7 @@
 
     <div class="portfolio-header">
         <h2>Design</h2>
-        <p>Ukázky mých projektů (kliknutím zvětšíš)</p>
+        <p>Ukázky mých projektů v oblasti designu (klikni pro fullscreen)</p>
     </div>
 
     <div class="portfolio-grid">
@@ -51,7 +51,7 @@
 
     <div class="portfolio-header web-header">
         <h2>Web</h2>
-        <p>Odkazy na mé funkční weby</p>
+        <p>Ukázky mých projektů v oblasti webů (pouze odkazy)</p>
     </div>
 
     <div class="portfolio-grid">
@@ -83,28 +83,41 @@
 </section>
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" src="" alt="Zvětšený náhled">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
 </div>
 
 <script>
-    function openLightbox(src) {
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = document.getElementById("lightbox-img");
-        lightbox.style.display = "flex";
-        lightboxImg.src = src;
-    }
+function openLightbox(src) {
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightbox-img");
+    
+    lb.style.display = "flex";
+    lbImg.src = src;
 
-    function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
+    // Aktivuje Fullscreen mód prohlížeče
+    if (lb.requestFullscreen) {
+        lb.requestFullscreen();
+    } else if (lb.webkitRequestFullscreen) { // Safari
+        lb.webkitRequestFullscreen();
     }
+}
 
-    // Zavření pomocí klávesy Esc
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            closeLightbox();
-        }
-    });
+function closeLightbox() {
+    const lb = document.getElementById("lightbox");
+    lb.style.display = "none";
+
+    // Vypne Fullscreen mód při zavření
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
 </script>
 
 </body>
