@@ -26,9 +26,9 @@
         <a href="#kontakt" class="btn">Napiš mi</a>
     </div>
 
-    
-        <img src="image-removebg-preview (1).png" alt="borec">
-    
+    <div class="hero-image">
+        <img src="image-removebg-preview (1).png" alt="borec" class="borec-image">
+    </div>
 </section>
 
 <section id="portfolio" class="portfolio">
@@ -83,9 +83,9 @@
     <p>Telefon: +420 123 456 789</p>
 </section>
 
-</body>
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="">
 </div>
 
@@ -98,6 +98,13 @@ function openLightbox(src) {
 function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
 </script>
+
+</body>
 </html>
- 
