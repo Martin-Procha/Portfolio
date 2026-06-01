@@ -1,93 +1,145 @@
 <!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-    <section id="portfolio" class="portfolio">
-        <h2>Moje Projekty</h2>
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-item">
-                <a href="https://martinprochazka.endora.site/WEB%20kapela/index.html" target="_blank" rel="noopener noreferrer">
-                    <img src="voidweb2.png" alt="voidweb">
-                </a>
-            </div>
+            <a href="https://martinprochazka.endora.site/WEB%20kapela/index.html" target="_blank" rel="noopener noreferrer">
 
-            <div class="portfolio-item">
-                <a href="https://martinprochazka.endora.site/WEB%20AI/index.html" target="_blank" rel="noopener noreferrer">
-                    <img src="webAI2.png" alt="webAI">
-                </a>
-            </div>
+                <img src="voidweb2.png" alt="voidweb">
 
-            <div class="portfolio-item">
-                <a href="https://martinprochazka.endora.site/" target="_blank" rel="noopener noreferrer">
-                    <img src="balatro2.png" alt="balatro">
-                </a>
-            </div>
+            </a>
 
-            <div class="portfolio-item">
-                <a href="MojeAplikace/index.html" target="_blank" rel="noopener noreferrer">
-                    <img src="MojeAplikace/nahled.png" alt="Moje Aplikace">
-                </a>
-            </div>
+        </div>
 
-        </div>
-    </section>
 
-    <section id="kontakt" class="kontakt">
-        <h2>Kontakt</h2>
-        <p>Email: martin.prochazka@educanet.cz</p>
-        <p>Telefon: +420 123 456 789</p>
-    </section>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-    </div>
+        <div class="portfolio-item">
 
-    <main>
-        <div id="container3D"></div>
-    </main>
+            <a href="https://martinprochazka.endora.site/WEB%20AI/index.html" target="_blank" rel="noopener noreferrer">
 
-    <script type="module" src="js/main.js"></script>
-    
-    <script>
-    function openLightbox(src) {
-        const lb = document.getElementById("lightbox");
-        const lbImg = document.getElementById("lightbox-img");
-        
-        lb.style.display = "flex";
-        lbImg.src = src;
+                <img src="webAI2.png" alt="webAI">
 
-        // Aktivuje Fullscreen mód prohlížeče
-        if (lb.requestFullscreen) {
-            lb.requestFullscreen();
-        } else if (lb.webkitRequestFullscreen) { // Safari
-            lb.webkitRequestFullscreen();
-        }
-    }
+            </a>
 
-    function closeLightbox() {
-        const lb = document.getElementById("lightbox");
-        lb.style.display = "none";
+        </div>
 
-        // Vypne Fullscreen mód při zavření
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        }
-    }
 
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            closeLightbox();
-        }
-    });
-    </script>
-        
+
+        <div class="portfolio-item">
+
+            <a href="https://martinprochazka.endora.site/" target="_blank" rel="noopener noreferrer">
+
+                <img src="balatro2.png" alt="balatro">
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+<section id="kontakt" class="kontakt">
+
+    <h2>Kontakt</h2>
+
+    <p>Email: martin.prochazka@educanet.cz</p>
+
+    <p>Telefon: +420 123 456 789</p>
+
+</section>
+
+
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+
+    <span class="close" onclick="closeLightbox()">&times;</span>
+
+    <img id="lightbox-img" src="" alt="">
+
+</div>
+
+
+
+    
+
+    <main>
+
+      <div id="container3D"></div>
+
+    </main>
+
+
+
+    <script type="module" src="js/main.js"></script>
+
+<script>
+
+function openLightbox(src) {
+
+    const lb = document.getElementById("lightbox");
+
+    const lbImg = document.getElementById("lightbox-img");
+
+    
+
+    lb.style.display = "flex";
+
+    lbImg.src = src;
+
+
+
+    // Aktivuje Fullscreen mód prohlížeče
+
+    if (lb.requestFullscreen) {
+
+        lb.requestFullscreen();
+
+    } else if (lb.webkitRequestFullscreen) { // Safari
+
+        lb.webkitRequestFullscreen();
+
+    }
+
+}
+
+
+
+function closeLightbox() {
+
+    const lb = document.getElementById("lightbox");
+
+    lb.style.display = "none";
+
+
+
+    // Vypne Fullscreen mód při zavření
+
+    if (document.fullscreenElement) {
+
+        document.exitFullscreen();
+
+    }
+
+}
+
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeLightbox();
+
+    }
+
+});
+
+</script>
+
+    
+
 </body>
+
 </html>
