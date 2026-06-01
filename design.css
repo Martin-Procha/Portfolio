@@ -175,7 +175,7 @@ main {
     transform: translateY(-2px);
 }
 
-/* Stylizace Lightboxu v temném režimu */
+/* Reset a základní nastavení */
 .lightbox {
     display: none;
     position: fixed;
@@ -190,8 +190,9 @@ main {
 }
 
 .lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
+    /* Změněno z 90% na 50% pro poloviční velikost */
+    max-width: 50%;
+    max-height: 50%;
     object-fit: contain;
     border: 2px solid var(--primary-color);
 }
