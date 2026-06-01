@@ -1,74 +1,111 @@
-
 <!DOCTYPE html>
-            <a href="https://martinprochazka.endora.site/WEB%20kapela/index.html" target="_blank" rel="noopener noreferrer">
-                <img src="voidweb2.png" alt="voidweb">
-            </a>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Procházka - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Martin Procházka</div>
+        <ul>
+            <li><a href="#home">Domů</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Ahoj, já jsem<br>Martin</h1>
+            <h2>Web Developer & Designer</h2>
+            <p>Vítejte na mém osobním portfoliu. Podívejte se na mé nejnovější projekty a weby, které jsem vytvořil.</p>
+            <a href="#portfolio" class="btn">Zobrazit tvorbu</a>
+        </div>
+        <div class="hero-image">
+            <img src="borec.png" alt="Martin Procházka" class="borec-image">
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-header">
+            <h2>Moje Tvorba</h2>
+            <p>Ukázky mých projektů, na kterých jsem pracoval.</p>
         </div>
 
-        <div class="portfolio-item">
-            <a href="https://martinprochazka.endora.site/WEB%20AI/index.html" target="_blank" rel="noopener noreferrer">
-                <img src="webAI2.png" alt="webAI">
-            </a>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <a href="https://martinprochazka.endora.site/WEB%20kapela/index.html" target="_blank" rel="noopener noreferrer">
+                    <img src="voidweb2.png" alt="voidweb">
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://martinprochazka.endora.site/WEB%20AI/index.html" target="_blank" rel="noopener noreferrer">
+                    <img src="webAI2.png" alt="webAI">
+                </a>
+            </div>
+
+            <div class="portfolio-item">
+                <a href="https://martinprochazka.endora.site/" target="_blank" rel="noopener noreferrer">
+                    <img src="balatro2.png" alt="balatro">
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="portfolio-item">
-            <a href="https://martinprochazka.endora.site/" target="_blank" rel="noopener noreferrer">
-                <img src="balatro2.png" alt="balatro">
-            </a>
-        </div>
-    </div>
+    <section id="kontakt" class="kontakt">
+        <h2>Kontakt</h2>
+        <p>Email: martin.prochazka@educanet.cz</p>
+        <p>Telefon: +420 123 456 789</p>
+    </section>
 
-</section>
-
-<section id="kontakt" class="kontakt">
-    <h2>Kontakt</h2>
-    <p>Email: martin.prochazka@educanet.cz</p>
-    <p>Telefon: +420 123 456 789</p>
-</section>
-
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-</div>
-
-    
     <main>
-      <div id="container3D"></div>
+        <div id="container3D"></div>
     </main>
 
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
     <script type="module" src="js/main.js"></script>
-<script>
-function openLightbox(src) {
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightbox-img");
-    
-    lb.style.display = "flex";
-    lbImg.src = src;
+    <script>
+    function openLightbox(src) {
+        const lb = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lightbox-img");
+        
+        lb.style.display = "flex";
+        lbImg.src = src;
 
-    // Aktivuje Fullscreen mód prohlížeče
-    if (lb.requestFullscreen) {
-        lb.requestFullscreen();
-    } else if (lb.webkitRequestFullscreen) { // Safari
-        lb.webkitRequestFullscreen();
+        // Aktivuje Fullscreen mód prohlížeče
+        if (lb.requestFullscreen) {
+            lb.requestFullscreen();
+        } else if (lb.webkitRequestFullscreen) { // Safari
+            lb.webkitRequestFullscreen();
+        }
     }
-}
 
-function closeLightbox() {
-    const lb = document.getElementById("lightbox");
-    lb.style.display = "none";
+    function closeLightbox() {
+        const lb = document.getElementById("lightbox");
+        lb.style.display = "none";
 
-    // Vypne Fullscreen mód při zavření
-    if (document.fullscreenElement) {
-        document.exitFullscreen();
+        // Vypne Fullscreen mód při zavření
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
     }
-}
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        closeLightbox();
-    }
-});
-</script>
-    
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    });
+    </script>
+        
 </body>
+</html>
 </html>
