@@ -176,21 +176,21 @@ main {
 }
 
 
+/* Reset a základní nastavení */
 .lightbox {
     display: none;
     position: fixed;
     z-index: 9999;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.95);
     justify-content: center;
     align-items: center;
 }
 
 .lightbox-img {
-  
     max-width: 50%;
     max-height: 50%;
     object-fit: contain;
@@ -211,6 +211,31 @@ main {
 .close:hover {
     color: var(--primary-color);
 }
+
+/* --- ÚPRAVA PRO PROFILOVÝ OBRÁZEK A BOX --- */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob-bg {
+    width: 380px;           /* Výchozí šířka boxu (můžeš upravit) */
+    height: 380px;          /* Výchozí výška boxu (můžeš upravit) */
+    position: relative;
+    overflow: hidden;       /* Skryje vše, co přetéká ven z boxu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%;            /* Obrázek se roztáhne maximálně na šířku boxu */
+    height: 100%;           /* Obrázek se roztáhne maximálně na výšku boxu */
+    object-fit: cover;      /* Vyplní box bez deformace proporcí (případně změň na 'contain') */
+    display: block;
+}
+/* ----------------------------------------- */
 
 /* Responzivita pro menší displeje */
 @media (max-width: 900px) {
@@ -233,7 +258,8 @@ main {
         justify-content: center;
     }
     .blob-bg {
-        width: 280px;
-        height: 250px;
+        /* Zmenšení boxu na mobilech, obrázek se díky 100% šířce zmenší s ním */
+        width: 250px;       
+        height: 250px;      
     }
 }
