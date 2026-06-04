@@ -1,4 +1,3 @@
-/* Reset a základní nastavení */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +6,11 @@
 }
 
 :root {
-    --primary-color: #e50914;      /* Výrazná červená */
-    --bg-dark-page: #0a0a0a;       /* Celkové pozadí stránky (černá) */
-    --bg-dark-card: #121212;       /* Pozadí hlavní karty */
-    --text-light: #ffffff;         /* Hlavní bílý text */
-    --text-muted: #a0a0a0;         /* Šedivý vedlejší text */
+    --primary-color: #e50914;
+    --bg-dark-page: #0a0a0a;
+    --bg-dark-card: #121212;
+    --text-light: #ffffff;
+    --text-muted: #a0a0a0;
 }
 
 body {
@@ -24,14 +23,13 @@ body {
     overflow-x: hidden;
 }
 
-/* Hlavní wrapper simulující kartu z obrázku v tmavém provedení */
 main {
     width: 90%;
     max-width: 1200px;
     background: var(--bg-dark-card);
-    border: 1px solid rgba(229, 9, 20, 0.15); /* Jemný červený nádech okraje */
+    border: 1px solid rgba(229, 9, 20, 0.15);
     border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(229, 9, 20, 0.1); /* Červený stín */
+    box-shadow: 0 20px 50px rgba(229, 9, 20, 0.1);
     padding: 40px 60px;
     position: relative;
     min-height: 600px;
@@ -45,7 +43,6 @@ main {
     justify-content: space-between;
 }
 
-/* Navigace */
 .navbar {
     width: 100%;
     display: flex;
@@ -87,7 +84,6 @@ main {
     background-color: var(--primary-color);
 }
 
-/* Hero Sekce */
 .hero-content {
     display: flex;
     justify-content: space-between;
@@ -123,41 +119,10 @@ main {
 }
 
 .btn-contact:hover {
-    background-color: #b20710; /* Tmavší červená při hoveru */
+    background-color: #b20710;
     transform: translateY(-2px);
 }
 
-/* Pravá strana s fotkou a organickým červeným pozadím */
-.hero-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.blob-bg {
-    background-color: var(--primary-color);
-    width: 380px;
-    height: 340px;
-    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(229, 9, 20, 0.2);
-}
-
-.profile-img {
-    width: 85%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    /* Volitelné: filtr, aby fotka lépe seděla do tmavého tématu */
-    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.3)); 
-}
-
-/* Sociální ikony */
 .social-icons {
     display: flex;
     gap: 25px;
@@ -175,8 +140,6 @@ main {
     transform: translateY(-2px);
 }
 
-
-/* Reset a základní nastavení */
 .lightbox {
     display: none;
     position: fixed;
@@ -212,7 +175,6 @@ main {
     color: var(--primary-color);
 }
 
-/* --- ÚPRAVA PRO PROFILOVÝ OBRÁZEK A BOX --- */
 .hero-image-container {
     display: flex;
     justify-content: center;
@@ -220,24 +182,26 @@ main {
 }
 
 .blob-bg {
-    width: 380px;           /* Výchozí šířka boxu (můžeš upravit) */
-    height: 380px;          /* Výchozí výška boxu (můžeš upravit) */
+    background-color: var(--primary-color);
+    width: 380px;
+    height: 380px;
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     position: relative;
-    overflow: hidden;       /* Skryje vše, co přetéká ven z boxu */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 15px 35px rgba(229, 9, 20, 0.2);
 }
 
 .profile-img {
-    width: 100%;            /* Obrázek se roztáhne maximálně na šířku boxu */
-    height: 100%;           /* Obrázek se roztáhne maximálně na výšku boxu */
-    object-fit: cover;      /* Vyplní box bez deformace proporcí (případně změň na 'contain') */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.3)); 
 }
-/* ----------------------------------------- */
 
-/* Responzivita pro menší displeje */
 @media (max-width: 900px) {
     main {
         padding: 30px;
@@ -258,8 +222,7 @@ main {
         justify-content: center;
     }
     .blob-bg {
-        /* Zmenšení boxu na mobilech, obrázek se díky 100% šířce zmenší s ním */
-        width: 250px;       
-        height: 250px;      
+        width: 250px;
+        height: 250px;
     }
 }
