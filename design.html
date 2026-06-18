@@ -1,21 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlon - Design Portfolio</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
+    <main>
+        <div id="container3D">
+            
+            <header class="navbar">
+                <div class="logo">Marlon</div>
+                <nav class="nav-links">
+                    <a href="index.html">Domov</a> <a href="#" class="active">Design</a>
+                    <a href="stranky.html">Stránky</a>
+                    <a href="blender.html">Blender</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </nav>
+            </header>
+            
+            <div class="portfolio-section">
+                <h2 class="section-title">Moje <span>Projekty</span></h2>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" onclick="openLightbox('cesta_k_fotce1.jpg')">
+                        <img src="cesta_k_fotce1.jpg" alt="Design 1">
+                        <div class="item-overlay">
+                            <span>Zobrazit detail</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" onclick="openLightbox('cesta_k_fotce2.jpg')">
+                        <img src="cesta_k_fotce2.jpg" alt="Design 2">
+                        <div class="item-overlay">
+                            <span>Zobrazit detail</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" onclick="openLightbox('cesta_k_fotce3.jpg')">
+                        <img src="cesta_k_fotce3.jpg" alt="Design 3">
+                        <div class="item-overlay">
+                            <span>Zobrazit detail</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" onclick="openLightbox('cesta_k_fotce4.jpg')">
+                        <img src="cesta_k_fotce4.jpg" alt="Design 4">
+                        <div class="item-overlay">
+                            <span>Zobrazit detail</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" onclick="openLightbox('cesta_k_fotce5.jpg')">
+                        <img src="cesta_k_fotce5.jpg" alt="Design 5">
+                        <div class="item-overlay">
+                            <span>Zobrazit detail</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" onclick="openLightbox('cesta_k_fotce6.jpg')">
+                        <img src="cesta_k_fotce6.jpg" alt="Design 6">
+                        <div class="item-overlay">
+                            <span>Zobrazit detail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
 
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
-</div>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
 
+    <script>
+    function openLightbox(src) {
+        const lb = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lightbox-img");
+        
+        lb.style.display = "flex";
+        lbImg.src = src;
+
+        if (lb.requestFullscreen) {
+            lb.requestFullscreen();
+        } else if (lb.webkitRequestFullscreen) {
+            lb.webkitRequestFullscreen();
+        }
+    }
+
+    function closeLightbox() {
+        const lb = document.getElementById("lightbox");
+        lb.style.display = "none";
+
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    });
+    </script>
+        
 </body>
 </html>
