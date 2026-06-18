@@ -9,6 +9,114 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .portfolio-section {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3; 
+            border: 1px solid rgba(229, 9, 20, 0.15);
+            background-color: var(--bg-dark-page);
+            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.25);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.05);
+        }
+
+        .item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .item-overlay span {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            padding: 8px 18px;
+            border-radius: 6px;
+            background-color: rgba(229, 9, 20, 0.1);
+        }
+
+        .portfolio-item:hover .item-overlay {
+            opacity: 1;
+        }
+
+        /* Stylování lightbox obrázku */
+        #lightbox-img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            .section-title {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -31,42 +139,42 @@
                 
                 <div class="portfolio-grid">
                     <div class="portfolio-item" onclick="openLightbox('Instagram story VR (1).png')">
-                        <img src="Instagram story VR (1).png" alt="Design 1">
+                        <img src="Instagram story VR (1).png" alt="Design 1" class="portfolio-img">
                         <div class="item-overlay">
                             <span>Zobrazit detail</span>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" onclick="openLightbox('Snímek obrazovky 2026-02-05 152820.png')">
-                        <img src="Snímek obrazovky 2026-02-05 152820.png" alt="Design 2">
+                        <img src="Snímek obrazovky 2026-02-05 152820.png" alt="Design 2" class="portfolio-img">
                         <div class="item-overlay">
                             <span>Zobrazit detail</span>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" onclick="openLightbox('polygon fenek1.png.jpg')">
-                        <img src="polygon fenek1.png.jpg" alt="Design 3">
+                        <img src="polygon fenek1.png.jpg" alt="Design 3" class="portfolio-img">
                         <div class="item-overlay">
                             <span>Zobrazit detail</span>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" onclick="openLightbox('pejot.png')">
-                        <img src="pejot.png" alt="Design 4">
+                        <img src="pejot.png" alt="Design 4" class="portfolio-img">
                         <div class="item-overlay">
                             <span>Zobrazit detail</span>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" onclick="openLightbox('zaba.png')">
-                        <img src="zaba.png" alt="Design 5">
+                        <img src="zaba.png" alt="Design 5" class="portfolio-img">
                         <div class="item-overlay">
                             <span>Zobrazit detail</span>
                         </div>
                     </div>
                     
                     <div class="portfolio-item" onclick="openLightbox('citroen.png')">
-                        <img src="citroen.png" alt="Design 6">
+                        <img src="citroen.png" alt="Design 6" class="portfolio-img">
                         <div class="item-overlay">
                             <span>Zobrazit detail</span>
                         </div>
