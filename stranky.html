@@ -1,21 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Procházka - Webové Stránky</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .portfolio-section {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        .web-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+
+        .web-item-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+      
+        .web-item {
+            background-color: var(--bg-dark-page);
+            border: 1px solid rgba(229, 9, 20, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        
+        .web-preview-container {
+            width: 100%;
+            aspect-ratio: 16 / 10; 
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid rgba(229, 9, 20, 0.1);
+        }
+
+        .web-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .web-info {
+            padding: 20px;
+        }
+
+        .web-info h3 {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .web-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .web-item-link:hover .web-item {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 12px 30px rgba(229, 9, 20, 0.2);
+        }
+
+        .web-item-link:hover .web-img {
+            transform: scale(1.03);
+        }
+
+        .web-item-link:hover .web-info h3 {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 900px) {
+            .web-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            .section-title {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .web-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
 <body>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
+    <main>
+        <div id="container3D">
+            
+            <header class="navbar">
+                <div class="logo">Procházka</div>
+                <nav class="nav-links">
+                    <a href="index.html">Domov</a> 
+                    <a href="design.html">Design</a>
+                    <a href="#" class="active">Stránky</a>
+                    <a href="blender.html">Blender</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </nav>
+            </header>
+            
+            <div class="portfolio-section">
+                <h2 class="section-title">Webové <span>Stránky</span></h2>
+                
+                <div class="web-grid">
+                    
+                    <a href="projekt1.html" class="web-item-link" target="_blank">
+                        <div class="web-item">
+                            <div class="web-preview-container">
+                                <img src="nahled_webu1.png" alt="E-shop projekt" class="web-img">
+                            </div>
+                            <div class="web-info">
+                                <h3>Moderní E-shop</h3>
+                                <p>Návrh a kódování kompletního e-shopu s temným režimem a čistým layoutem.</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="projekt2.html" class="web-item-link" target="_blank">
+                        <div class="web-item">
+                            <div class="web-preview-container">
+                                <img src="nahled_webu2.png" alt="Portfolio projekt" class="web-img">
+                            </div>
+                            <div class="web-info">
+                                <h3>Osobní Portfolio</h3>
+                                <p>Plně responzivní jednostránkový web zaměřený na moderní typografii.</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="projekt3.html" class="web-item-link" target="_blank">
+                        <div class="web-item">
+                            <div class="web-preview-container">
+                                <img src="nahled_webu3.png" alt="Magazín projekt" class="web-img">
+                            </div>
+                            <div class="web-info">
+                                <h3>Online Magazín</h3>
+                                <p>Webový portál s propracovaným systémem kategorií a mřížkovým rozložením článků.</p>
+                            </div>
+                        </div>
+                    </a>
 
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
-</div>
+                </div> </div> </div>
+    </main>
 
 </body>
 </html>
